@@ -9,4 +9,9 @@ public class DocumentImage extends IDocument {
 		super("I");
 	}
 
+	@Override
+	public String toString() {
+		return super.tipo;
+	}
+
 }

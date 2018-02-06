@@ -9,4 +9,9 @@ public class DocumentText extends IDocument{
 		super("T");
 	}
 
+	@Override
+	public String toString() {
+		return super.tipo;
+	}
+
 }

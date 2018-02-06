@@ -1,9 +1,13 @@
 package application.interfaces;
 
 public abstract class IDocument {
-	private String tipo;
-	
+
+	protected String tipo;
+
 	public IDocument(String tipo) {
 		this.tipo = tipo;
 	}
+
+	public abstract String toString();
+
 }

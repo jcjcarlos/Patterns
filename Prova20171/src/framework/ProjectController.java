@@ -5,7 +5,9 @@
  */
 package framework;
 
-import application.fatory.FrameWork;
+import application.FrameWork;
+import application.factories.ImageCreator;
+import application.factories.TextCreator;
 import application.interfaces.IFrameWork;
 import framework.interfaces.IProjectController;
 
@@ -29,13 +31,11 @@ public class ProjectController implements IProjectController {
 
 	@Override
 	public void initialize() {
-		frameWork = FrameWork.getInstance();
-		frameWork.saveDocument("text1", frameWork.createDocument("D"));
-		frameWork.saveDocument("image1", frameWork.createDocument("I"));
-		frameWork.saveDocument("text2", frameWork.createDocument("D"));
-		frameWork.saveDocument("image2", frameWork.createDocument("I"));
-		frameWork.deleteDocument("text1");
-		frameWork.deleteDocument("image1");
+		System.out.println("Criando FrameWork");
+		IFrameWork frameWork = new FrameWork();
+		System.out.println("Adicionando MethodFactory ao FrameWork");
+		frameWork.setCreator(new ImageCreator());
+		frameWork.fileOpen();
 	}
 	
 }
